@@ -1,14 +1,18 @@
 import RandomQuote from './RandomQuote.js';
 import ApiRandomQuote from './ApiRandomQuote.js';
 import IsFavorite from './IsFavorite.js';
+import Theme from './Theme.js';
+import { domElements } from './DOMElements.js';
+
 class RandomQuoteApp {
   constructor() {
-    this.btn = document.getElementById('gen-btn');
-    this.quote = document.getElementById('quote');
-    this.apiBtn = document.getElementById('api-btn');
+    this.btn = domElements.genBtn;
+    this.quote = domElements.quote;
+    this.apiBtn = domElements.apiBtn;
     this.isFavorite = new IsFavorite('toggle-favorite', () =>
       this.toggleFavorite()
     );
+    this.Theme = new Theme(domElements);
     this.favoriteQuotes = {};
     this.currentQuote;
     this.init();
@@ -18,7 +22,7 @@ class RandomQuoteApp {
     this.currentQuote.isFavorite = !this.currentQuote.isFavorite;
     const id = this.currentQuote.id;
     this.currentQuote.isFavorite
-      ? (this.favoriteQuotes[id] = true)
+      ? (this.favoriteQuotes[id] = this.currentQuote)
       : delete this.favoriteQuotes[id];
     this.showQuote();
     console.log(this.favoriteQuotes);
