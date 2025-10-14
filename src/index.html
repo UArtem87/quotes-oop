@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quotes API</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container" id="container">
+      <div class="theme">
+        <div class="theme__color" id="theme">
+          <div class="theme__color--pointer" id="pointer"></div>
+        </div>
+      </div>
+      <div class="main">
+        <h1>Random quotes</h1>
+        <p id="quote">Click button to generate a random quote</p>
+        <div class="btn-container">
+          <div class="btn-block">
+            <button id="gen-btn" class="btn">Generate Quote</button>
+            <button class="btn" id="api-btn">Get random quote by API</button>
+            <!-- <span id="toggle-favorite" class="star"></span> -->
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="favorite-container" id="favorite-container"></div>
+    <script src="main.js" type="module"></script>
+  </body>
+</html>
