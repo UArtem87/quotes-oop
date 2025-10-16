@@ -46,8 +46,8 @@ class RandomQuoteApp {
     this.changeCurrentQoute(apiQuote);
   }
 
-  generateRandomQuote() {
-    const randomQuote = RandomQuote.generateQuote();
+  async generateRandomQuote() {
+    const randomQuote = await RandomQuote.generateQuote();
     this.changeCurrentQoute(randomQuote);
   }
 

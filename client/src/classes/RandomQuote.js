@@ -1,13 +1,17 @@
-import quotes from '../data/quotes.js';
-import MathUtil from '../utils/MathUtil.js';
 import Quote from './Quote.js';
 
 class RandomQuote {
-  static generateQuote() {
-    const currentIndex = MathUtil.randomInt(quotes.length);
-    const { text, author } = quotes[currentIndex];
-    const randomQuote = new Quote(currentIndex, text, author);
-    return randomQuote;
+  static async generateQuote() {
+    try {
+      const url = 'http://localhost:3000/quotes/random-single';
+      const response = await fetch(url);
+      const quote = await response.json();
+      const { id, text, author } = quote;
+      const randomQuote = new Quote(id, text, author);
+      return randomQuote;
+    } catch (error) {
+      console.error(error);
+    }
   }
 }
 
