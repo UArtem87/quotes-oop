@@ -3,7 +3,7 @@ import Quote from './Quote.js';
 class RandomQuote {
   static async generateQuote() {
     try {
-      const url = 'https://quotes-oop.onrender.com/quotes/random-single';
+      const url = 'https://quotes-oop.onrender.com:3000/quotes/random-single';
       const response = await fetch(url);
       const quote = await response.json();
       const { id, text, author } = quote;
