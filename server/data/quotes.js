@@ -39,6 +39,10 @@ const quotes = [
     author: 'Лао-цзи',
     text: 'Подорож у тисячу миль починається з одного кроку',
   },
+  {
+    author: 'Artem Us',
+    text: 'Привіт Артемка',
+  },
 ];
 
 module.exports = quotes;
