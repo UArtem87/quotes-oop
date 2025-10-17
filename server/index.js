@@ -3,7 +3,7 @@ const quotes = require('./data/quotes');
 const cors = require('cors');
 
 const app = express();
-const port = 3000;
+const port = process.env.PORT || 3000;
 
 app.use(cors());
 
@@ -22,4 +22,3 @@ app.get('/quotes/random-single', (req, res) => {
 app.listen(port, () => {
   console.log(`Quotes API service running on port ${port}`);
 });
-1;
